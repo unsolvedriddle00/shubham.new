@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Silica Sand Co. - FAQ</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta
+      name="keywords"
+      content="Silica Sand, allahabadsilicasand, allahabadsands, allahabad silica sand, sankargarh, sankargarh silica sand, silica sand mining, silica sand, silica , SERVICES, SILICA SAND, FAQ"
+    />
+    <meta name="robots" content="INDEX, FOLLOW, SERVICES,FAQ" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* FAQ-specific enhancements */
+      .faq-hero {
+        height: 60vh;
+        background: var(--gradient-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        margin-top: 70px;
+      }
+
+      .faq-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="30" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        animation: float 20s ease-in-out infinite;
+      }
+
+      .faq-hero-content {
+        max-width: 800px;
+        padding: 2rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .faq-hero h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        animation: fadeInUp 1s ease;
+      }
+
+      .faq-hero p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        animation: fadeInUp 1s ease 0.2s both;
+      }
+
+      .faq-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        color: var(--secondary-color);
+        animation: fadeInUp 1s ease 0.1s both;
+      }
+
+      .faq-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem 5%;
+      }
+
+      .faq-item {
+        background: white;
+        margin-bottom: 1.5rem;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow-light);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .faq-item:hover {
+        box-shadow: var(--shadow-medium);
+        transform: translateY(-2px);
+      }
+
+      .faq-question {
+        padding: 1.5rem 2rem;
+        background: var(--gradient-primary);
+        color: white;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        user-select: none;
+      }
+
+      .faq-question:hover {
+        background: var(--gradient-secondary);
+      }
+
+      .faq-question i {
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+      }
+
+      .faq-question.active i {
+        transform: rotate(180deg);
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        background: white;
+      }
+
+      .faq-answer.active {
+        max-height: 200px;
+        padding: 1.5rem 2rem;
+      }
+
+      .faq-answer p {
+        color: #555;
+        line-height: 1.7;
+        font-size: 1rem;
+        margin: 0;
+      }
+
+      .faq-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin: 4rem 0;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .stat-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: var(--shadow-light);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-medium);
+      }
+
+      .stat-card i {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .stat-card h3 {
+        font-size: 2rem;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+      }
+
+      .stat-card p {
+        color: #666;
+        font-size: 0.9rem;
+        margin: 0;
+      }
+
+      .help-section {
+        background: var(--gradient-primary);
+        padding: 4rem 2rem;
+        border-radius: 20px;
+        margin: 4rem auto;
+        max-width: 800px;
+        text-align: center;
+        color: white;
+        box-shadow: var(--shadow-medium);
+      }
+
+      .help-section h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .help-section p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+
+      .help-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .help-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 12px 25px;
+        background: var(--secondary-color);
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow-light);
+      }
+
+      .help-btn:hover {
+        background: #e67e22;
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-medium);
+      }
+
+      .search-box {
+        max-width: 600px;
+        margin: 3rem auto;
+        position: relative;
+      }
+
+      .search-input {
+        width: 100%;
+        padding: 15px 50px 15px 20px;
+        border: none;
+        border-radius: 25px;
+        font-size: 1rem;
+        background: white;
+        box-shadow: var(--shadow-light);
+        transition: all 0.3s ease;
+      }
+
+      .search-input:focus {
+        outline: none;
+        box-shadow: var(--shadow-medium);
+      }
+
+      .search-btn {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        bottom: 5px;
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 20px;
+        padding: 0 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .search-btn:hover {
+        background: #1e3d6f;
+      }
+
+      /* Mobile responsiveness */
+      @media (max-width: 768px) {
+        .faq-hero h1 {
+          font-size: 2.2rem;
+        }
+
+        .faq-question {
+          padding: 1rem 1.5rem;
+          font-size: 1rem;
+        }
+
+        .faq-answer.active {
+          padding: 1rem 1.5rem;
+        }
+
+        .help-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .help-btn {
+          width: 200px;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header with proper structure -->
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="logo">M/S Allahabad Silica Sand</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.htm">About Us</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+        <div class="burger">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </header>
+
+    <!-- FAQ Hero Section -->
+    <section class="faq-hero">
+      <div class="faq-hero-content">
+        <div class="faq-icon">
+          <i class="fas fa-question-circle"></i>
+        </div>
+        <h1>Frequently Asked Questions</h1>
+        <p>
+          Find answers to the most common questions about our silica sand
+          products and services
+        </p>
+      </div>
+    </section>
+
+    <!-- Search Box -->
+    <div class="section">
+      <div class="search-box">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search for answers..."
+          id="searchInput"
+        />
+        <button class="search-btn" onclick="searchFAQ()">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+
+      <!-- FAQ Stats -->
+      <div class="faq-stats">
+        <div class="stat-card">
+          <i class="fas fa-industry"></i>
+          <h3>15+</h3>
+          <p>Years of Experience</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-users"></i>
+          <h3>500+</h3>
+          <p>Happy Clients</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-award"></i>
+          <h3>100%</h3>
+          <p>Quality Assured</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-clock"></i>
+          <h3>24/7</h3>
+          <p>Customer Support</p>
+        </div>
+      </div>
+
+      <!-- FAQ Items -->
+      <div class="faq-container">
+        <div
+          class="faq-item"
+          data-keywords="silica sand uses applications glass construction filtration"
+        >
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>What is silica sand used for?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Silica sand is a versatile industrial mineral used in various
+              applications including glass manufacturing (the primary use),
+              construction industry for concrete and mortar, water filtration
+              systems, foundry work for metal casting, hydraulic fracturing in
+              oil and gas industry, and sports surfaces like golf courses and
+              volleyball courts. Our high-quality silica sand meets industry
+              standards for all these applications.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="faq-item"
+          data-keywords="extraction mining processing methods quarry"
+        >
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>How is silica sand extracted and processed?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Our silica sand is extracted through carefully planned quarrying
+              operations in Sankargarh. The raw material undergoes systematic
+              processing including washing, screening, and grading to remove
+              impurities like clay, silt, and organic matter. We use advanced
+              equipment to ensure consistent quality and meet specific customer
+              requirements for different grain sizes and purity levels.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="faq-item"
+          data-keywords="custom products customization specifications requirements"
+        >
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>Do you offer custom sand products?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Yes, we specialize in customizing our silica sand products to meet
+              your specific requirements. We can adjust grain size distribution,
+              chemical composition, and other parameters based on your
+              application needs. Our technical team works closely with clients
+              to develop tailored solutions for specialized industrial
+              applications.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="faq-item"
+          data-keywords="quality standards testing certification ISO"
+        >
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>What quality standards do you maintain?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              We maintain strict quality control measures throughout our
+              production process. Our silica sand products are tested for
+              chemical composition, grain size distribution, and physical
+              properties. We follow industry standards and provide detailed
+              certificates of analysis with each shipment to ensure consistent
+              quality that meets your specifications.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="faq-item"
+          data-keywords="delivery shipping logistics transportation bulk"
+        >
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>What are your delivery and shipping options?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              We offer flexible delivery options including bulk truck loads,
+              railway wagons, and container shipments. Our strategic location in
+              Prayagraj provides excellent connectivity to major industrial
+              centers across India. We work with reliable logistics partners to
+              ensure timely delivery and can accommodate both small and large
+              volume orders.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="faq-item"
+          data-keywords="minimum order quantity MOQ bulk orders"
+        >
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>What is your minimum order quantity?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Our minimum order quantities vary depending on the product
+              specifications and delivery location. For standard grades, we
+              typically accept orders from 10 tons onwards. However, we're
+              flexible and can discuss smaller quantities for sampling or trial
+              purposes. Contact our sales team for specific MOQ requirements for
+              your needs.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="faq-item"
+          data-keywords="pricing costs quotation rates competitive"
+        >
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>How do you determine pricing?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Our pricing is based on several factors including product
+              specifications, order quantity, delivery location, and current
+              market conditions. We offer competitive rates and volume discounts
+              for large orders. Please contact us with your specific
+              requirements for a detailed quotation. We provide transparent
+              pricing with no hidden costs.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="faq-item"
+          data-keywords="environmental sustainability eco-friendly green mining"
+        >
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>What environmental measures do you follow?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              We are committed to sustainable mining practices and environmental
+              protection. Our operations include dust control measures, water
+              recycling systems, land reclamation programs, and compliance with
+              all environmental regulations. We regularly monitor our
+              environmental impact and implement best practices to minimize our
+              ecological footprint.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Help Section -->
+      <div class="help-section">
+        <h2>Still have questions?</h2>
+        <p>
+          Our expert team is here to help you find the perfect silica sand
+          solution for your needs.
+        </p>
+        <div class="help-buttons">
+          <a href="contact.html" class="help-btn">
+            <i class="fas fa-envelope"></i>
+            Contact Us
+          </a>
+          <a href="tel:+919670250595" class="help-btn">
+            <i class="fas fa-phone"></i>
+            Call Now
+          </a>
+          <a href="products.html" class="help-btn">
+            <i class="fas fa-box"></i>
+            View Products
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- About & Contact Section -->
+    <div class="about-contact-section">
+      <div class="about-us">
+        <h3>About Us</h3>
+        <p>
+          We are a leading provider of silica sand, known for our commitment to
+          quality and sustainability. Our products are utilized in various
+          industries including construction, glass manufacturing, and water
+          filtration. With over 15 years of experience, we have established
+          ourselves as a trusted supplier in the region.
+        </p>
+        <div style="margin-top: 2rem">
+          <a href="index.html" class="contact-info">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+          <a href="about.html" class="contact-info">
+            <i class="fas fa-info-circle"></i>
+            <span>Our Values</span>
+          </a>
+          <a href="about.html" class="contact-info">
+            <i class="fas fa-users"></i>
+            <span>Meet the Team</span>
+          </a>
+        </div>
+      </div>
+      <div class="vertical-line"></div>
+      <div class="contact-us">
+        <h3>Contact Us</h3>
+        <p>
+          <strong>Location:</strong> Saraswati Sector, Trivenipuram, Prayagraj
+          211019 (U.P.)
+        </p>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28827.617673023473!2d81.8848319108398!3d25.423140900000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39854b44701993d3%3A0x48a14112e5731823!2sM%2FS%20ALLAHABAD%20SILICA%20SAND!5e0!3m2!1sen!2sin!4v1724150543400!5m2!1sen!2sin"
+          width="260"
+          height="200"
+          style="border: 0; border-radius: 10px; margin: 1rem 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+
+        <a href="tel:+919670250595" class="contact-info">
+          <i class="fas fa-phone"></i>
+          <span>+91-9670250595</span>
+        </a>
+
+        <a href="mailto:allahabadsilicasand@gmail.com" class="contact-info">
+          <i class="fas fa-envelope"></i>
+          <span>allahabadsilicasand@gmail.com</span>
+        </a>
+
+        <a href="index.html" class="contact-info">
+          <i class="fas fa-globe"></i>
+          <span>allahabadsilicasand.com</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <p>
+          &copy; 2024 Allahabad Silica Sand Designed by Adarsh Singh. All Rights
+          Reserved.
+        </p>
+        <p>
+          Follow us on: <a href="#" class="social-link">Facebook</a> |
+          <a href="#" class="social-link">Twitter</a> |
+          <a href="#" class="social-link">LinkedIn</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile navigation toggle
+      const burger = document.querySelector(".burger");
+      const navLinks = document.querySelector(".nav-links");
+
+      burger.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+      });
+
+      // FAQ toggle functionality
+      function toggleFAQ(element) {
+        const faqItem = element.parentElement;
+        const answer = faqItem.querySelector(".faq-answer");
+        const icon = element.querySelector("i");
+
+        // Close all other FAQ items
+        document.querySelectorAll(".faq-item").forEach((item) => {
+          if (item !== faqItem) {
+            item.querySelector(".faq-answer").classList.remove("active");
+            item.querySelector(".faq-question").classList.remove("active");
+          }
+        });
+
+        // Toggle current FAQ item
+        answer.classList.toggle("active");
+        element.classList.toggle("active");
+      }
+
+      // Search functionality
+      function searchFAQ() {
+        const searchTerm = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        const faqItems = document.querySelectorAll(".faq-item");
+
+        faqItems.forEach((item) => {
+          const keywords = item.getAttribute("data-keywords").toLowerCase();
+          const question = item
+            .querySelector(".faq-question span")
+            .textContent.toLowerCase();
+          const answer = item
+            .querySelector(".faq-answer p")
+            .textContent.toLowerCase();
+
+          if (
+            keywords.includes(searchTerm) ||
+            question.includes(searchTerm) ||
+            answer.includes(searchTerm)
+          ) {
+            item.style.display = "block";
+            item.style.animation = "fadeIn 0.5s ease";
+          } else {
+            item.style.display = searchTerm === "" ? "block" : "none";
+          }
+        });
+      }
+
+      // Real-time search
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", searchFAQ);
+
+      // Add smooth loading animation
+      document.addEventListener("DOMContentLoaded", function () {
+        const faqItems = document.querySelectorAll(".faq-item");
+        faqItems.forEach((item, index) => {
+          item.style.opacity = "0";
+          item.style.transform = "translateY(20px)";
+          setTimeout(() => {
+            item.style.transition = "all 0.5s ease";
+            item.style.opacity = "1";
+            item.style.transform = "translateY(0)";
+          }, index * 100);
+        });
+      });
+    </script>
+  </body>
+</html>
